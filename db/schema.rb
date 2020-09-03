@@ -16,13 +16,14 @@ ActiveRecord::Schema.define(version: 2020_09_01_212826) do
   enable_extension "plpgsql"
 
   create_table "collections", force: :cascade do |t|
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_collections_on_user_id"
   end
 
   create_table "items", force: :cascade do |t|
+    t.bigint "collection_id"
     t.string "name"
     t.string "brand"
     t.string "product_type"
@@ -33,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_09_01_212826) do
     t.boolean "favorite"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["collection_id"], name: "index_items_on_collection_id"
   end
 
   create_table "users", force: :cascade do |t|
