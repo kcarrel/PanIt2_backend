@@ -27,6 +27,11 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 
+gem "jwt", "~> 2.1"
+
+gem 'active_model_serializers'
+
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
