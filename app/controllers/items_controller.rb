@@ -15,7 +15,8 @@ class ItemsController < ApplicationController
             notes: item_params[:notes],
             favorite: item_params[:favorite]
         )
-        render :json => @item
+        render json: {status: "success", code: 200, message: "Item added to your collection!"}
+        
     end
 
     private
